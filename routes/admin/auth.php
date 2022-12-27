@@ -25,4 +25,4 @@ Route::post('/logout', [LoginController::class, "logout"])->name('adminLogout');
 
 Route::get('/home', function () {
     return inertia('Dashboard/Home');
-})->name('getAdminHome');
+})->middleware('auth:admin')->name('getAdminHome');
