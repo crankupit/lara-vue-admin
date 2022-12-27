@@ -21,9 +21,8 @@ Route::post('/register', [RegisterController::class, "register"])->name('postUse
 Route::get('/login', [LoginController::class, "index"])->name('getUserLogin');
 Route::post('/login', [LoginController::class, "login"])->name('postUserLogin');
 
-// Logout will be a POST request. This is just for testing purposes.
-Route::get('/logout', [LoginController::class, "logout"])->name('userLogout');
+Route::post('/logout', [LoginController::class, "logout"])->name('userLogout');
 
 Route::get('/home', function () {
-    return view('user.home');
+    return inertia('Dashboard/Home');
 })->name('getUserHome');

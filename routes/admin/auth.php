@@ -21,9 +21,8 @@ Route::post('/register', [RegisterController::class, "register"])->name('postAdm
 Route::get('/login', [LoginController::class, "index"])->name('getAdminLogin');
 Route::post('/login', [LoginController::class, "login"])->name('postAdminLogin');
 
-// Logout will be a POST request. This is just for testing purposes.
-Route::get('/logout', [LoginController::class, "logout"])->name('adminLogout');
+Route::post('/logout', [LoginController::class, "logout"])->name('adminLogout');
 
 Route::get('/home', function () {
-    return view('admin.home');
+    return inertia('Dashboard/Home');
 })->name('getAdminHome');

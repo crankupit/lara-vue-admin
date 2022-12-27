@@ -10,7 +10,7 @@ class LoginController extends Controller
 
     public function index()
     {
-        return view('user.auth.login');
+        return inertia('Auth/Login');
     }
 
     public function login(Request $request)

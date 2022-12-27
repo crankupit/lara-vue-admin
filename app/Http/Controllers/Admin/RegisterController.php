@@ -9,7 +9,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('admin.auth.register');
+        return inertia('Auth/Register');
     }
 
     public function register()
